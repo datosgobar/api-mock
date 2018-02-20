@@ -1,0 +1,4 @@
+{
+  "api_management/libs/kong/test/kong_tests2.py::test_create": true,
+  "api_management/libs/kong/test/kong_tests2.py::test_create_extra": true
+}

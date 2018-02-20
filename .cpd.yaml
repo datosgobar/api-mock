@@ -1,0 +1,7 @@
+languages:
+  - python
+files:
+  - "api_management/**/*"
+exclude:
+  - "**/migrations/*"
+limit: 0.0
