@@ -16,3 +16,8 @@ def echo(request):
 @api_view(['GET'])
 def data(_):
     return Response({'id': 4, 'username': 'lauren'})
+
+
+@api_view(['GET'])
+def datos_csv(_):
+    return Response(b'id, username\n 1, lauren\n 2, john')
