@@ -1,5 +1,4 @@
 from django.urls import reverse
-import json
 from rest_framework import status
 from rest_framework.test import APITestCase
 
@@ -12,10 +11,10 @@ class ApiMockTests(APITestCase):
         data = {'arg': 'val'}
 
         response = self.client.post(url, data, format='json')
-        response_json = json.loads(response.content)
+        response_json = response.json()
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEquals(response_json, data)
+        self.assertEqual(response_json, data)
 
     def test_get_data(self):
 
@@ -23,4 +22,4 @@ class ApiMockTests(APITestCase):
 
         response = self.client.get(url)
 
-        self.assertEqual(json.loads(response.content), {'id': 4, 'username': 'lauren'})
+        self.assertEqual(response.json(), {'id': 4, 'username': 'lauren'})

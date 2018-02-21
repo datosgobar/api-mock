@@ -11,3 +11,8 @@ def landing(request):
 @api_view(['POST'])
 def echo(request):
     return Response(request.data)
+
+
+@api_view(['GET'])
+def data(_):
+    return Response({'id': 4, 'username': 'lauren'})

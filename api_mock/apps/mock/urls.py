@@ -5,5 +5,6 @@ import api_mock.apps.mock.views as views
 # pylint: disable=invalid-name
 urlpatterns = [
     path('echo/', views.echo, name='echo'),
+    path('data/', views.data, name='data'),
     path('', views.landing),
 ]
