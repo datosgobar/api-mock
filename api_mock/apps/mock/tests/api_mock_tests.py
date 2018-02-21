@@ -33,6 +33,17 @@ class ApiMockTests(APITestCase):
 
         self.assertEqual(response.json(), self.expected_datos_json)
 
+    def test_get_datos_csv(self):
+
+        url = reverse('datos.csv')
+
+        response = self.client.get(url)
+
+        expected_data = b'"id, username\\n 1, lauren\\n 2, john"'
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.content, expected_data)
+
     def test_get_datos_json_only_id(self):
 
         url = reverse('datos.json')
