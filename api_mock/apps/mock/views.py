@@ -14,9 +14,15 @@ def echo(request):
 
 
 @api_view(['GET'])
-def data(_):
-    return Response({'total': 2,
-                     'data': [{'id': 1,
-                               'username': 'lauren'},
-                              {'id': 2,
-                               'username': 'john'}]})
+def data(request):
+    if 'only_id' in request.query_params and request.query_params['only_id']:
+        response_data = {'total': 2,
+                         'data': [1, 2]}
+    else:
+        response_data = {'total': 2,
+                         'data': [{'id': 1,
+                                   'username': 'lauren'},
+                                  {'id': 2,
+                                   'username': 'john'}]}
+
+    return Response(response_data)
