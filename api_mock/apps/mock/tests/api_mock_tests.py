@@ -16,3 +16,11 @@ class ApiMockTests(APITestCase):
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEquals(response_json, data)
+
+    def test_get_data(self):
+
+        url = reverse('data')
+
+        response = self.client.get(url)
+
+        self.assertEqual(json.loads(response.content), {'id': 4, 'username': 'lauren'})
