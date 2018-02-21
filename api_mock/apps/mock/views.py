@@ -15,7 +15,8 @@ def echo(request):
 
 @api_view(['GET'])
 def data(request):
-    if 'only_id' in request.query_params and request.query_params['only_id']:
+    if 'only_id' in request.query_params \
+            and request.query_params['only_id'].lower() == 'true':
         response_data = {'total': 2,
                          'data': [1, 2]}
     else:
