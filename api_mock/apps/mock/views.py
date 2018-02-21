@@ -15,4 +15,8 @@ def echo(request):
 
 @api_view(['GET'])
 def data(_):
-    return Response({'id': 4, 'username': 'lauren'})
+    return Response({'total': 2,
+                     'data': [{'id': 1,
+                               'username': 'lauren'},
+                              {'id': 2,
+                               'username': 'john'}]})
