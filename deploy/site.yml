@@ -1,6 +1,0 @@
----
-
-- import_playbook: api_cluster.yml
-- import_playbook: postgresql.yml
-- import_playbook: app.yml
-- import_playbook: kong.yml
