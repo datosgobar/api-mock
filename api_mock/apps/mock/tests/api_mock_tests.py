@@ -27,3 +27,14 @@ class ApiMockTests(APITestCase):
                                                      'username': 'lauren'},
                                                     {'id': 2,
                                                      'username': 'john'}]})
+
+    def test_get_datos_json_only_id(self):
+
+        url = reverse('datos.json')
+
+        query = {'only_id': True}
+
+        response = self.client.get(url, data=query)
+
+        self.assertEqual(response.json(), {'total': 2,
+                                           'data': [1, 2]})
