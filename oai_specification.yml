@@ -33,8 +33,6 @@ paths:
           description: "successful operation"
           schema:
             $ref: "#/definitions/Data"
-        405:
-          description: "Invalid input"
 
   /data.csv:
     get:
@@ -46,9 +44,7 @@ paths:
         200:
           description: "successful operation"
           schema:
-            $ref: "#/definitions/Data"
-        405:
-          description: "Invalid input"
+            $ref: "#/definitions/DataCSV"
 
 definitions:
   Data:
@@ -66,3 +62,5 @@ definitions:
             username:
               type: "string"
 
+  DataCSV:
+    type: "string"
