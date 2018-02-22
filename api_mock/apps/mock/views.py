@@ -17,8 +17,8 @@ def echo(request):
 def datos_csv(_):
     return Response(b'id, username\n 1, lauren\n 2, john')
 
-  
-@api_view(['GET']) 
+
+@api_view(['GET'])
 def datos_json(request):
     if 'only_id' in request.query_params \
             and request.query_params['only_id'].lower() == 'true':
