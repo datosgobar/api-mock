@@ -49,6 +49,16 @@ paths:
 definitions:
   Data:
     type: "object"
+    example: {"total": 2,
+      'data': [
+          { 'id': 1,
+            'username': 'jhon'
+          },
+          { 'id': 2,
+            'username': 'doe'
+          }
+        ]
+    }
     properties:
       total:
         type: "integer"
@@ -64,3 +74,4 @@ definitions:
 
   DataCSV:
     type: "string"
+    example: "id, username\n 1, john\n 2, doe"
