@@ -76,7 +76,7 @@ class ApiMockTests(APITestCase):
                                            'data': [{'id': 1,
                                                      'username': 'lauren'}]})
 
-    def test_get_datos_json_q_only_id_true(self):
+    def test_get_datos_json_q_only_id_true(self):  # pylint: disable=invalid-name
 
         url = reverse('datos.json')
 
