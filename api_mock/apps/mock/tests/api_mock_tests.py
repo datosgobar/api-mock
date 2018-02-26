@@ -63,3 +63,27 @@ class ApiMockTests(APITestCase):
         response = self.client.get(url, data=query)
 
         self.assertEqual(response.json(), self.expected_datos_json)
+
+    def test_get_datos_json_q(self):
+
+        url = reverse('datos.json')
+
+        query = {'q': 'lauren'}
+
+        response = self.client.get(url, data=query)
+
+        self.assertEqual(response.json(), {'total': 1,
+                                           'data': [{'id': 1,
+                                                     'username': 'lauren'}]})
+
+    def test_get_datos_json_q_only_id_true(self):  # pylint: disable=invalid-name
+
+        url = reverse('datos.json')
+
+        query = {'q': 'lauren',
+                 'only_id': True}
+
+        response = self.client.get(url, data=query)
+
+        self.assertEqual(response.json(), {'total': 1,
+                                           'data': [1]})
