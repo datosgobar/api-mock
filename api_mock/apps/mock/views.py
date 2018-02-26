@@ -1,8 +1,11 @@
 import re
 
 from django.shortcuts import render
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, renderer_classes
 from rest_framework.response import Response
+from rest_framework_yaml.renderers import YAMLRenderer
+
+from api_mock.apps.mock import oai
 
 
 # Create your views here.
@@ -39,3 +42,15 @@ def datos_json(request):
     response_data = list(response_data)
     return Response({'total': len(response_data),
                      'data': response_data})
+
+
+@api_view(['GET'])
+@renderer_classes((YAMLRenderer,))
+def oai_specification_yml(_):
+    return Response(oai.specification)
+
+
+@api_view(['GET'])
+def oai_specification_json(_):
+    return Response(oai.specification)
+  
