@@ -36,8 +36,8 @@ Esto significa que todas las configuraciones deberian hacerse por variables de e
 
 1. Build: `docker-compose build`
 1. Iniciar los servicios: `docker-compose up -d`
-1. Migrar la base de datos: `docker-compose run django /app/venv/bin/python manage.py migrate`
-1. Crear un super usuario: `docker-compose run django /app/venv/bin/python manage.py createsuperuser`
+1. Migrar la base de datos: `docker-compose run django python3 manage.py migrate`
+1. Crear un super usuario: `docker-compose run django python3 manage.py createsuperuser`
 
 ## Git hooks
 
@@ -54,7 +54,7 @@ Esto significa que todas las configuraciones deberian hacerse por variables de e
 
 * `./manage.py shell`
 
-* Con Docker: `docker-compose run django /app/venv/bin/python manage.py migrate`
+* Con Docker: `docker-compose run django python33 manage.py migrate`
 
 ## Tests
 

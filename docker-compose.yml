@@ -9,7 +9,7 @@ services:
     environment:
       DATABASE_URL: postgres://development:development@db/development_db
       REDIS_HOST: redis
-      KONG_ADMIN_URL: http://kong:8001/
+      DJANGO_SETTINGS_MODULE: conf.settings.local
     depends_on:
       - db
       - redis
@@ -17,20 +17,11 @@ services:
       - ./:/app/code/
     ports:
       - "8080:8080"
-  rq_worker: # This is a copy of django service
-    build:
-      context: .
-      args:
-        requirements: requirements/local.txt # Use local requirements!
-    environment:
-      DATABASE_URL: postgres://development:development@db/development_db
-      REDIS_HOST: redis
     depends_on:
       - db
       - redis
     volumes:
       - ./:/app/code/
-    command: /app/venv/bin/python manage.py rqworker default create_model
   db:
     image: postgres:9.6-alpine
     environment:
