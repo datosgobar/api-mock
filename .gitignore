@@ -115,3 +115,4 @@ node_modules/
 *.db
 .ruby-version
 .rbenv-gemset
+.vscode/
