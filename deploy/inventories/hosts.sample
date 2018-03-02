@@ -1,0 +1,12 @@
+psql0
+web0
+
+[web]
+web0
+
+[postgresql]
+psql0
+
+[api_cluster:children]
+web
+postgresql

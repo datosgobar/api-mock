@@ -1,0 +1,6 @@
+---
+
+postgresql_user: "database_user"
+postgresql_database_name: "database_name"
+postgresql_password: "database_password"
+
