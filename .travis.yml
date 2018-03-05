@@ -30,7 +30,7 @@ script:
   - scripts/tests.sh
 
 before_deploy:
-  - docker build . datosgobar/api-mock:latest
+  - docker build -t datosgobar/api-mock:latest .
 
 
 deploy:
