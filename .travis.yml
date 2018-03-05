@@ -29,13 +29,13 @@ before_script:
 script:
   - scripts/tests.sh
 
-#before_deploy:
-#  - docker build . datosgobar/api-mock:latest
-#
-#
-#deploy:
-#  - provider: script
-#    skip_cleanup: true
-#    script: "scripts/upload_image.sh datosgobar/api-mock:latest"
-#    on:
-#      branch: master
+before_deploy:
+  - docker build . datosgobar/api-mock:latest
+
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: "scripts/upload_image.sh datosgobar/api-mock:latest"
+    on:
+      branch: master
