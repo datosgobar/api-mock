@@ -1,0 +1,5 @@
+---
+
+ansible_host: "{{ vault_ansible_host }}"
+ansible_port: "{{ vault_ansible_port }}"
+postgresql_listen_address: "127.0.0.1"

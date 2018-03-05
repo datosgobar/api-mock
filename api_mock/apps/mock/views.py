@@ -53,4 +53,3 @@ def oai_specification_yml(_):
 @api_view(['GET'])
 def oai_specification_json(_):
     return Response(oai.specification)
-  
