@@ -137,12 +137,14 @@ USE_L10N = True
 USE_TZ = True
 
 
+APP_PREFIX = "/api-mock"
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 # Do not use a dir inside the project in production environments
 MEDIA_ROOT = BASE_DIR('media')
-MEDIA_URL = '/media/'
+MEDIA_URL = '%s/media/' % APP_PREFIX
 STATIC_ROOT = BASE_DIR('static')
-STATIC_URL = '/static/'
+STATIC_URL = '%s/static/' % APP_PREFIX
 
 SITE_ID = 1
