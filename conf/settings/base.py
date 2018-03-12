@@ -136,15 +136,15 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-APP_PREFIX = "/api-mock"
+# Use default form base.py
+FORCE_SCRIPT_NAME = env("FORCE_SCRIPT_NAME", default="")
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 # Do not use a dir inside the project in production environments
 MEDIA_ROOT = BASE_DIR('media')
-MEDIA_URL = '%s/media/' % APP_PREFIX
+MEDIA_URL = '%s/media/' % FORCE_SCRIPT_NAME
 STATIC_ROOT = BASE_DIR('static')
-STATIC_URL = '%s/static/' % APP_PREFIX
+STATIC_URL = '%s/static/' % FORCE_SCRIPT_NAME
 
 SITE_ID = 1

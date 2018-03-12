@@ -40,3 +40,9 @@ EMAIL_HOST = env('EMAIL_HOST', default="")
 EMAIL_HOST_USER = env('EMAIL_HOST_USER', default="")
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default="")
 EMAIL_USE_TLS = True
+
+# Use default form base.py
+FORCE_SCRIPT_NAME = env("FORCE_SCRIPT_NAME", default="/api-mock")
+
+MEDIA_URL = '%s/media/' % FORCE_SCRIPT_NAME
+STATIC_URL = '%s/static/' % FORCE_SCRIPT_NAME
