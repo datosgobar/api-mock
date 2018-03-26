@@ -4,7 +4,7 @@ set -e;
 
 echo "Agregando clave SSH"
 eval "$(ssh-agent -s)"
-ssh-add deploy-api@travis-ci.org
+ssh-add /tmp/deploy-api@travis-ci.org
 
 # Nota: Las variables no definidas aqui deben ser seteadas en ./variables.sh
 
